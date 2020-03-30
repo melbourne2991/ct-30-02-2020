@@ -1,12 +1,8 @@
 import React from "react";
 import { createPortal } from "react-dom";
 import { Flex, Box } from "rebass";
-import { motion, AnimatePresence } from "framer-motion";
 
 export const modalMountPointRef = React.createRef(null);
-
-const MotionBox = motion.custom(Box);
-const MotionFlex = motion.custom(Flex);
 
 const fixedFullScreen = {
   position: "fixed",
@@ -37,6 +33,7 @@ export const Modal = ({ children, onClickOverlay }) => {
         sx={{
           ...fixedFullScreen
         }}
+        id="modal"
         justifyContent="center"
         alignItems="center"
       >

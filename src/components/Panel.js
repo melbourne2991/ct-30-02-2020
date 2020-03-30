@@ -1,7 +1,5 @@
 import React from "react";
-import { createPortal } from "react-dom";
-import { Box, Flex } from "rebass";
-import { motion } from "framer-motion";
+import { Flex } from "rebass";
 
 export const Panel = ({ header, footer, ...props }) => (
   <Flex

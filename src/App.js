@@ -7,7 +7,6 @@ import { Hero } from "./components/Hero";
 
 import { SignUp } from "./SignUp";
 import { Modal, modalMountPointRef } from "./components/Modal";
-import { AnimatePresence } from "framer-motion";
 
 export const App = () => {
   const [showSignUpModalState, setShowSignUpModal] = useState(false);

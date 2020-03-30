@@ -6,11 +6,12 @@ import { Input } from "./Input";
 export const Field = React.forwardRef(
   ({ errors, type, name, placeholder }, ref) => (
     <>
-      <Error>
-        <ErrorMessage errors={errors} name={name} />
-      </Error>
+      <ErrorMessage errors={errors} name={name}>
+        {({ message }) => <Error id={`error-${name}`}>{message}</Error>}
+      </ErrorMessage>
+
       <Input
-        id={name}
+        id={`field-${name}`}
         name={name}
         placeholder={placeholder}
         mb={3}

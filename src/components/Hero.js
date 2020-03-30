@@ -17,7 +17,13 @@ export const Hero = ({ onClickCta }) => {
         <Text fontSize={[3, 3, 4]} mb={4} textAlign="center">
           Be the first to know when we launch
         </Text>
-        <Button p={3} fontSize={[2, 3]} textAlign="center" onClick={onClickCta}>
+        <Button
+          id="cta-button"
+          p={3}
+          fontSize={[2, 3]}
+          textAlign="center"
+          onClick={onClickCta}
+        >
           Request an invite
         </Button>
       </Flex>

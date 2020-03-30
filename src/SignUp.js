@@ -15,6 +15,7 @@ const serverErrorMap = {
 const mapServerError = err => {
   if (
     err.response &&
+    err.response.data &&
     err.response.data.errorMessage &&
     serverErrorMap[err.response.data.errorMessage]
   ) {
@@ -26,6 +27,7 @@ const mapServerError = err => {
 
 const SignUpSuccess = ({ onSignUpComplete }) => (
   <Flex
+    id="signup-success"
     flex={1}
     justifyContent="center"
     alignItems="center"
@@ -35,7 +37,9 @@ const SignUpSuccess = ({ onSignUpComplete }) => (
       Thank you we will be in touch shortly!
     </Text>
 
-    <Button onClick={onSignUpComplete}>Close</Button>
+    <Button id="close-success" onClick={onSignUpComplete}>
+      Close
+    </Button>
   </Flex>
 );
 
@@ -73,12 +77,12 @@ export const SignUp = ({ onSignUpComplete }) => {
         name: values.fullName,
         email: values.email
       });
+
+      setFlowState("submitted");
     } catch (err) {
       setFlowState("form");
       setServerError(mapServerError(err));
     }
-
-    setFlowState("submitted");
   }, []);
 
   const ActiveComponent = signUpStates[flowState];

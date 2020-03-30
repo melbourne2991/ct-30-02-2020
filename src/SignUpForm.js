@@ -15,16 +15,20 @@ export const SignUpForm = ({ serverError, onSubmit }) => {
         Request an invite
       </Heading>
 
-      {serverError && <Error sx={{ textAlign: "center" }}>{serverError}</Error>}
+      {serverError && (
+        <Error id="server-error" sx={{ textAlign: "center" }}>
+          {serverError}
+        </Error>
+      )}
 
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form id="signup-form" onSubmit={handleSubmit(onSubmit)}>
         <Flex flexDirection="column" flex={1}>
           <Field
             errors={errors}
             name={"fullName"}
             placeholder="Full Name"
             ref={register({
-              required: "Full name is reqired"
+              required: "Full name is required"
             })}
           />
 
@@ -52,20 +56,16 @@ export const SignUpForm = ({ serverError, onSubmit }) => {
                 message: "Must be a valid email address"
               },
               validate: () => {
-                console.log("validating");
-
                 const email = watch("email");
                 const confirmEmail = watch("confirmEmail");
 
-                console.log(email, confirmEmail);
-
-                if (email !== confirmEmail) return "Emails must match";
+                if (email !== confirmEmail) return "Email addresses must match";
               }
             })}
           />
         </Flex>
 
-        <Button type="submit" width={1}>
+        <Button type="submit" width={1} id="signup-submit">
           Send
         </Button>
       </form>
