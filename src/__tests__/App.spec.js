@@ -82,7 +82,19 @@ describe("App", () => {
     );
   });
 
-  test("Does not allow invalid email addrewsses", async () => {
+  test("Full name must be at least 3 characters", async () => {
+    await submitFormWithValues({
+      fullName: "a",
+      email: "bademail.com",
+      confirmEmail: "bademail.com"
+    });
+
+    expect(selectById("error-fullName").textContent).toBe(
+      "Full name must be at least 3 characters"
+    );
+  });
+
+  test("Does not allow invalid email addresses", async () => {
     await submitFormWithValues({
       fullName: "Ihaveareally Longname",
       email: "bademail.com",
@@ -94,7 +106,7 @@ describe("App", () => {
     );
   });
 
-  test("Required emails to match", async () => {
+  test("Email addresses must match", async () => {
     await submitFormWithValues({
       fullName: "Ihaveareally Longname",
       email: "goodemail@goodemail.com",
@@ -106,7 +118,7 @@ describe("App", () => {
     );
   });
 
-  test("Shows success message", async () => {
+  test("Displays a success message", async () => {
     mock.onPost("/auth").reply(200);
 
     await submitFormWithValues({

@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "parcel index.html",
-    "test": "NODE_ENV=test jest"
+    "test": "NODE_ENV=test jest",
+    "build": "parcel build index.html"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -23,7 +24,6 @@
     "@styled-system/css": "^5.1.5",
     "axios": "^0.19.2",
     "emotion-theming": "^10.0.27",
-    "framer-motion": "^1.10.2",
     "react": "^16.8.0",
     "react-dom": "^16.13.1",
     "react-hook-form": "^5.2.0",

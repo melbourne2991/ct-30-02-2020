@@ -28,7 +28,11 @@ export const SignUpForm = ({ serverError, onSubmit }) => {
             name={"fullName"}
             placeholder="Full Name"
             ref={register({
-              required: "Full name is required"
+              required: "Full name is required",
+              minLength: {
+                value: 3,
+                message: "Full name must be at least 3 characters"
+              }
             })}
           />
 
