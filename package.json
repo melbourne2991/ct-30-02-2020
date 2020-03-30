@@ -1,0 +1,32 @@
+{
+  "name": "airwallex-code-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.9.4",
+    "jest": "^25.2.3",
+    "parcel": "^1.12.4"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.8.7",
+    "@emotion/core": "^10.0.28",
+    "@rebass/forms": "^4.0.6",
+    "@rebass/preset": "^4.0.5",
+    "@styled-system/css": "^5.1.5",
+    "axios": "^0.19.2",
+    "emotion-theming": "^10.0.27",
+    "framer-motion": "^1.10.2",
+    "react": "^16.8.0",
+    "react-dom": "^16.13.1",
+    "react-hook-form": "^5.2.0",
+    "react-modal": "^3.11.2",
+    "react-spinners": "^0.8.1",
+    "rebass": "^4.0.7"
+  }
+}
